@@ -47,9 +47,9 @@ $ node /src/index.js (the defult port is 8000 run on localhost)
 ## Published Web3 Searching API
 
 - Usage
-  - ENS Resolve API - https://web3.skyproton.org/api/ens/'ens domain name'
-  - ENS Balance Search API -  https://web3.skyproton.org/api/ens/'ens domain name or ethereum address'
-- Chain Support
+  - ENS Resolve API - https://web3.skyproton.org/api/ens/'ens_domain_name'
+  - ENS Balance Search API -  https://web3.skyproton.org/api/ens/'ens_domain_name_or_ethereum_address'
+- Chain Supported
   - Ethereum
     - Mainnet
 
