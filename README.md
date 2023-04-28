@@ -16,6 +16,7 @@
 ```bash
 $ cd frontend
 $ npm install
+$ vim /src/pages/config.json (input the API_Key & save it)
 $ npm start
 ```
 
@@ -36,13 +37,15 @@ $ node /src/index.js (the defult port is 8000 run on localhost)
   - Result
   - Update
   - About 
-  - Connection (Connect to Web3 by Metamask)
+  - API (For generate API Key & delete API Key)
 - Backend API (Node.js) 
   - Functions & Usage
     - Resolve address by ENS ([Ethereum Name Service](https://ens.domains/))
       - Ex: http://127.0.0.1:8000/api/ens/ethereum.eth
     - Get ETH Balance by address
       - Ex: http://127.0.0.1:8000/api/balance/0x1eFb4e9395c1295d3102AC445d48A969B8Ac4D17
+    - Generate API Key by Email
+    - Delete API Key
 
 ## Published Web3 Searching API
 
