@@ -2,6 +2,7 @@ import '../App.css';
 import {useState} from 'react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+const config = require('./config.json');
 
 function Home() {
   const navigate = useNavigate();
@@ -20,7 +21,9 @@ function Home() {
   async function searchingByAddress(address) {
     if (address.includes(".eth")) {
       localStorage.setItem('ens', address);
-      const url = `http://127.0.0.1:8000/api/ens/${address}`;
+      
+      var apiKey = config.apiKey;
+      const url = `http://127.0.0.1:8000/api/${apiKey}/eth/ens/${address}`;
       fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -30,7 +33,7 @@ function Home() {
     }
     localStorage.setItem('account', address);
 
-    const url = `http://127.0.0.1:8000/api/balance/${address}`;
+    const url = `http://127.0.0.1:8000/api/${apiKey}/eth/balance/${address}`;
     fetch(url)
       .then(response => response.json())
       .then(data => {

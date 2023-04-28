@@ -59,3 +59,21 @@ a {
   width: 25em;
   /* width: 140%; */
 }
+
+.email {
+  border-radius: 100px;
+  border: 5px solid #282c34;
+  padding: 10px;
+  font-size: 30px;
+  width: 20em;
+  /* width: 140%; */
+}
+
+.apiKey {
+  border-radius: 100px;
+  border: 5px solid #282c34;
+  padding: 10px;
+  font-size: 30px;
+  width: 20em;
+  /* width: 140%; */
+}

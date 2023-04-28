@@ -10,7 +10,7 @@ const Layout = () => {
             <Link to="/result">Result</Link>
             <Link to="/update">Update</Link>
             <Link to="/about">About</Link>
-            <Link to="/connection">Connection</Link>
+            <Link to="/api">API</Link>
         </ul>
       </nav>
       <Outlet />

@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Layout from "./pages/Layout";
 import Update from "./pages/Update";
-import Connection from "./pages/Connection";
+import API from "./pages/API";
 import Result from "./pages/Result";
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
         <Route path="result" element={<Result />} />
         <Route path="update" element={<Update />} />
         <Route path="about" element={<About />} />
-        <Route path="connection" element={<Connection />} />
+        <Route path="api" element={<API />} />
       </Route>
     </Routes>
   </BrowserRouter>
