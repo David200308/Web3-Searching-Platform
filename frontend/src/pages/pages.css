@@ -77,3 +77,13 @@ a {
   width: 20em;
   /* width: 140%; */
 }
+
+.showTrans {
+  border-radius: 100px;
+  border: 5px solid #282c34;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 30px;
+  width: 5m;
+  /* width: 140%; */
+}

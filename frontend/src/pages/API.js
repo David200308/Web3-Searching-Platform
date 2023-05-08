@@ -24,7 +24,8 @@ const API = () => {
         if (emailInput === "") {
             apiTokenPart.render(<h4>Please Input Email</h4>);
         } else {
-            const url = `http://127.0.0.1:8000/api/generateAPIKey/${emailInput}`;
+            // const url = `http://127.0.0.1:8000/api/generateAPIKey/${emailInput}`;
+            const url = `https://web3.skyproton.org/api/generateAPIKey/${emailInput}`;
                 fetch(url)
                 .then(response => response.json())
                 .then(data => {
@@ -36,8 +37,10 @@ const API = () => {
                     
                     const apiUsagePart = ReactDOM.createRoot(document.getElementById('usage'));
                     apiUsagePart.render(
-                        <h4>ENS Resolve API: http://127.0.0.1:8000/api/{token}/eth/ens/with_your_ens_name<br></br><br></br>
-                        Balance Search API: http://127.0.0.1:8000/api/{token}/eth/balance/with_your_address_or_ens</h4>
+                        <h4>ENS Resolve API: https://web3.skyproton.org/api/{token}/eth/ens/with_your_ens_name<br></br><br></br>
+                        Balance Search API: https://web3.skyproton.org/api/{token}/eth/balance/with_your_address_or_ens<br></br><br></br>
+                        Other API Usage: https://github.com/David200308/Web3-Searching-Platform
+                        </h4>
                     );
                 }
             );
@@ -47,7 +50,8 @@ const API = () => {
     const deleteAPIToken = () => {
         const deletePart = ReactDOM.createRoot(document.getElementById('delete'));
 
-        const url = `http://127.0.0.1:8000/api/deleteAPIKey/${apiKeyInput}`;
+        // const url = `http://127.0.0.1:8000/api/deleteAPIKey/${apiKeyInput}`;
+        const url = `https://web3.skyproton.org/api/deleteAPIKey/${apiKeyInput}`;
             fetch(url)
             .then(response => response.json())
             .then(data => {
