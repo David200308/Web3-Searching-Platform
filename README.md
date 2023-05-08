@@ -35,11 +35,11 @@ $ node /src/index.js (the defult port is 8000 run on localhost)
 ## Contents & Functions
 
 - Frontend (React.js)
-  - Search (Searching by Address & ENS)
-  - Result
-  - Update
+  - Search -> Searching by Address / ENS / TX Hash / Block Number
+  - Result -> Display the searching result
+  - Update -> Display the Version Update for this searching
   - About
-  - API (For generate API Key & delete API Key)
+  - API -> For generate API Key & delete API Key
 - Backend API (Node.js)
   - Functions & Usages
     - Resolve address by ENS ([Ethereum Name Service](https://ens.domains/))
