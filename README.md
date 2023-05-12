@@ -22,7 +22,7 @@ $ vim /src/pages/config.json (input the API_Key & save it)
 $ npm start
 ```
 
-- Backend
+- Backend (Prepare Database)
 
 ```bash
 $ cd backend
@@ -54,18 +54,21 @@ $ node /src/index.js (the defult port is 8000 run on localhost)
 ## Published Web3 Searching API
 
 - Usage
-  - ENS Resolve API - https://web3.skyproton.org/api/your_api_key/eth/ens/ens_domain_name
-    - Ex: https://web3.skyproton.org/api/000...0000/eth/ens/ethereum.eth
-  - ETH Balance Search API -  https://web3.skyproton.org/api/your_api_key/eth/ens/ens_domain_name_or_ethereum_address
-    - Ex: https://web3.skyproton.org/api/000...0000/eth/balance/0x1eFb4e9395c1295d3102AC445d48A969B8Ac4D17
-  - Transaction Information by Transaction Hash -  https://web3.skyproton.org/api/your_api_key/eth/txhash/the_hash_your_want_to_searching
-    - Ex: https://web3.skyproton.org/api/000...0000/eth/txhash/0x552e5eaefb3ff50e350689ed7d6f571b8da2e37c04f8e5fa3ad31e67f056fdea
-  - Transactions from Block -  https://web3.skyproton.org/api/your_api_key/eth/block/the_block_number_your_want_to_searching
-    - Ex: https://web3.skyproton.org/api/000...0000/eth/block/11111
-  - Get the Transactions History of From Address -  https://web3.skyproton.org/api/your_api_key/eth/historyFrom/ens_domain_name_or_ethereum_address
-    - Ex: https://web3.skyproton.org/api/000...0000/eth/historyFrom/0x1eFb4e9395c1295d3102AC445d48A969B8Ac4D17
-  - Get the Transactions History of To Address -  https://web3.skyproton.org/api/your_api_key/eth/historyTo/ens_domain_name_or_ethereum_address
-    - Ex: https://web3.skyproton.org/api/000...0000/eth/historyTo/0x1eFb4e9395c1295d3102AC445d48A969B8Ac4D17
+  - ENS Resolve API - https://web3.skyproton.org/api/eth/ens/ens_domain_name
+    - Ex: https://web3.skyproton.org/api/eth/ens/ethereum.eth
+  - ETH Balance Search API -  https://web3.skyproton.org/api/eth/ens/ens_domain_name_or_ethereum_address
+    - Ex: https://web3.skyproton.org/api/eth/balance/0x1eFb4e9395c1295d3102AC445d48A969B8Ac4D17
+  - Transaction Information by Transaction Hash -  https://web3.skyproton.org/api/eth/txhash/the_hash_your_want_to_searching
+    - Ex: https://web3.skyproton.org/api/eth/txhash/0x552e5eaefb3ff50e350689ed7d6f571b8da2e37c04f8e5fa3ad31e67f056fdea
+  - Transactions from Block -  https://web3.skyproton.org/api/eth/block/the_block_number_your_want_to_searching
+    - Ex: https://web3.skyproton.org/api/eth/block/11111
+  - Get the Transactions History of From Address -  https://web3.skyproton.org/api/eth/historyFrom/ens_domain_name_or_ethereum_address
+    - Ex: https://web3.skyproton.org/api/eth/historyFrom/0x1eFb4e9395c1295d3102AC445d48A969B8Ac4D17
+  - Get the Transactions History of To Address -  https://web3.skyproton.org/api/eth/historyTo/ens_domain_name_or_ethereum_address
+    - Ex: https://web3.skyproton.org/api/eth/historyTo/0x1eFb4e9395c1295d3102AC445d48A969B8Ac4D17
+- API Key
+  - Header will be include the "x-api-key": your_api_key
+  
 - Chain Supported
   - Ethereum
     - Mainnet

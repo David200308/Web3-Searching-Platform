@@ -11,13 +11,14 @@ const config = {
 };
 const alchemy = new Alchemy(config);
 
-// Function to hash the apikey
 function hash(string) {
     return createHash('sha256').update(string).digest('hex');
 }
 
 exports.getENSAddress = async (req, res, next) => {
-    if (hash(req.params.apiKey) == "null") {
+    const apiKey = req.headers['x-api-key'];
+
+    if (hash(apiKey) == "null") {
         res.status(401).json({
             status: "failed",
             message: "Invalid API Key"
@@ -25,7 +26,7 @@ exports.getENSAddress = async (req, res, next) => {
     }
 
     var sql = "SELECT * FROM APIDB WHERE apiToken = ?";
-    db.query(sql, [hash(req.params.apiKey)], async function (err, result) {
+    db.query(sql, [hash(apiKey)], async function (err, result) {
         if (err) throw err;
         if (result.length == 0) {
             res.status(401).json({
@@ -43,7 +44,9 @@ exports.getENSAddress = async (req, res, next) => {
 };
 
 exports.getBalance = async (req, res, next) => {
-    if (hash(req.params.apiKey) == "null") {
+    const apiKey = req.headers['x-api-key'];
+
+    if (hash(apiKey) == "null") {
         res.status(401).json({
             status: "failed",
             message: "Invalid API Key"
@@ -51,7 +54,7 @@ exports.getBalance = async (req, res, next) => {
     }
     
     var sql = "SELECT * FROM APIDB WHERE apiToken = ?";
-    db.query(sql, [hash(req.params.apiKey)], async function (err, result) {
+    db.query(sql, [hash(apiKey)], async function (err, result) {
         if (err) throw err;
         if (result.length == 0) {
             res.status(401).json({
@@ -71,7 +74,9 @@ exports.getBalance = async (req, res, next) => {
 };
 
 exports.getTransactionFromHash = async (req, res, next) => {
-    if (hash(req.params.apiKey) == "null") {
+    const apiKey = req.headers['x-api-key'];
+
+    if (hash(apiKey) == "null") {
         res.status(401).json({
             status: "failed",
             message: "Invalid API Key"
@@ -79,7 +84,7 @@ exports.getTransactionFromHash = async (req, res, next) => {
     }
     
     var sql = "SELECT * FROM APIDB WHERE apiToken = ?";
-    db.query(sql, [hash(req.params.apiKey)], async function (err, result) {
+    db.query(sql, [hash(apiKey)], async function (err, result) {
         if (err) throw err;
         if (result.length == 0) {
             res.status(401).json({
@@ -98,7 +103,9 @@ exports.getTransactionFromHash = async (req, res, next) => {
 };
 
 exports.getTransactionsFromBlock = async (req, res, next) => {
-    if (hash(req.params.apiKey) == "null") {
+    const apiKey = req.headers['x-api-key'];
+
+    if (hash(apiKey) == "null") {
         res.status(401).json({
             status: "failed",
             message: "Invalid API Key"
@@ -106,7 +113,7 @@ exports.getTransactionsFromBlock = async (req, res, next) => {
     }
     
     var sql = "SELECT * FROM APIDB WHERE apiToken = ?";
-    db.query(sql, [hash(req.params.apiKey)], async function (err, result) {
+    db.query(sql, [hash(apiKey)], async function (err, result) {
         if (err) throw err;
         if (result.length == 0) {
             res.status(401).json({
@@ -125,7 +132,9 @@ exports.getTransactionsFromBlock = async (req, res, next) => {
 };
 
 exports.getTransactionsHistoryOfFromAddress = async (req, res, next) => {
-    if (hash(req.params.apiKey) == "null") {
+    const apiKey = req.headers['x-api-key'];
+
+    if (hash(apiKey) == "null") {
         res.status(401).json({
             status: "failed",
             message: "Invalid API Key"
@@ -133,7 +142,7 @@ exports.getTransactionsHistoryOfFromAddress = async (req, res, next) => {
     }
     
     var sql = "SELECT * FROM APIDB WHERE apiToken = ?";
-    db.query(sql, [hash(req.params.apiKey)], async function (err, result) {
+    db.query(sql, [hash(apiKey)], async function (err, result) {
         if (err) throw err;
         if (result.length == 0) {
             res.status(401).json({
@@ -158,7 +167,9 @@ exports.getTransactionsHistoryOfFromAddress = async (req, res, next) => {
 };
 
 exports.getTransactionsHistoryOfToAddress = async (req, res, next) => {
-    if (hash(req.params.apiKey) == "null") {
+    const apiKey = req.headers['x-api-key'];
+
+    if (hash(apiKey) == "null") {
         res.status(401).json({
             status: "failed",
             message: "Invalid API Key"
@@ -166,7 +177,7 @@ exports.getTransactionsHistoryOfToAddress = async (req, res, next) => {
     }
     
     var sql = "SELECT * FROM APIDB WHERE apiToken = ?";
-    db.query(sql, [hash(req.params.apiKey)], async function (err, result) {
+    db.query(sql, [hash(apiKey)], async function (err, result) {
         if (err) throw err;
         if (result.length == 0) {
             res.status(401).json({
@@ -179,7 +190,9 @@ exports.getTransactionsHistoryOfToAddress = async (req, res, next) => {
                 toAddress: req.params.address,
                 category: ["external", "internal", "erc20", "erc721", "erc1155"],
             });
-
+            
+            // console.log(data);
+            
             res.status(200).json({
                 status: "success",
                 historyOfToAddress: data

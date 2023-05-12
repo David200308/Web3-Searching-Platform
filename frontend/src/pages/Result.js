@@ -21,7 +21,6 @@ const Result = () => {
 
     function showTransactionsInBlock() {
         const transactionsArrayInBlock = txblock_transactions.split(",");
-        console.log("test:", transactionsArrayInBlock);
         var str = ''
         
         if (transactionsArrayInBlock.length === 0 || transactionsArrayInBlock[0] === '') {
@@ -45,7 +44,7 @@ const Result = () => {
         balance = 0;
     }
     if (ens != null) {
-        console.log(ens);
+        // console.log(ens);
         return (
             <div>
                 <center>
@@ -57,7 +56,7 @@ const Result = () => {
             </div>
         );
     } else if (account != null) {
-        console.log(account);
+        // console.log(account);
         return (
             <div>
                 <center>
@@ -114,16 +113,6 @@ const Result = () => {
                     </tr>
                     </h2>
                     </table>
-                   
-                    {/* <h2>Transaction Hash: {txhash_hash}</h2>
-                    <h2>Block: {txhash_blockNumber}</h2>
-                    <h2>Block Hash: {txhash_blockHash}</h2>
-                    <h2>Confirmations: {txhash_confirmations}</h2>
-                    <h2>From: {txhash_from}</h2>
-                    <h2>To: {txhash_to}</h2>
-                    <h2>Value: {txhash_value} ETH</h2>
-                    <h2>Nonce: {txhash_nonce}</h2>
-                    <h2>Data: {txhash_data}</h2> */}
 
                 </center>
             </div>

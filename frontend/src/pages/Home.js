@@ -39,9 +39,10 @@ function Home() {
     if (address.includes(".eth")) {
       localStorage.setItem('ens', address);
       
-      const url = `https://web3.skyproton.org/api/${apiKey}/eth/ens/${address}`;
-      // const url = `http://127.0.0.1:8000/api/${apiKey}/eth/ens/${address}`;
-      fetch(url)
+      const url = `http://127.0.0.1:8000/api/eth/ens/${address}`;
+      fetch(url, {
+        headers: {"x-api-key": apiKey}
+      })
         .then(response => response.json())
         .then(data => {
           localStorage.setItem('account', data.address);
@@ -50,9 +51,10 @@ function Home() {
     }
     localStorage.setItem('account', address);
 
-    const url = `https://web3.skyproton.org/api/${apiKey}/eth/balance/${address}`;
-    // const url = `http://127.0.0.1:8000/api/${apiKey}/eth/balance/${address}`;
-    fetch(url)
+    const url = `http://127.0.0.1:8000/api/eth/balance/${address}`;
+    fetch(url, {
+      headers: {"x-api-key": apiKey}
+    })
       .then(response => response.json())
       .then(data => {
         localStorage.setItem('balance', data.balance);
@@ -62,9 +64,10 @@ function Home() {
   }
 
   async function searchingByTXHash(txhash) {
-    const url = `https://web3.skyproton.org/api/${apiKey}/eth/txhash/${txhash}`;
-    // const url = `http://127.0.0.1:8000/api/${apiKey}/eth/txhash/${txhash}`;
-    fetch(url)
+    const url = `http://127.0.0.1:8000/api/eth/txhash/${txhash}`;
+    fetch(url, {
+      headers: {"x-api-key": apiKey}
+    })
       .then(response => response.json())
       .then(data => {
         localStorage.setItem('txhash_hash', data.tx.hash);
@@ -83,9 +86,10 @@ function Home() {
   }
 
   async function searchingByBlock(blockNumber) {
-    const url = `https://web3.skyproton.org/api/${apiKey}/eth/block/${blockNumber}`;
-    // const url = `http://127.0.0.1:8000/api/${apiKey}/eth/block/${blockNumber}`;
-    fetch(url)
+    const url = `http://127.0.0.1:8000/api/eth/block/${blockNumber}`;
+    fetch(url, {
+      headers: {"x-api-key": apiKey}
+    })
       .then(response => response.json())
       .then(data => {
         console.log(data);

@@ -37,8 +37,8 @@ const API = () => {
                     
                     const apiUsagePart = ReactDOM.createRoot(document.getElementById('usage'));
                     apiUsagePart.render(
-                        <h4>ENS Resolve API: https://web3.skyproton.org/api/{token}/eth/ens/with_your_ens_name<br></br><br></br>
-                        Balance Search API: https://web3.skyproton.org/api/{token}/eth/balance/with_your_address_or_ens<br></br><br></br>
+                        <h4>ENS Resolve API: https://web3.skyproton.org/api/eth/ens/with_your_ens_name<br></br><br></br>
+                        With Header: x-api-key: {token} <br></br><br></br>
                         Other API Usage: https://github.com/David200308/Web3-Searching-Platform
                         </h4>
                     );
